@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
 
 
 
         System.out.println("Welcome to my Trivia Game.");
         //System.out.println("Please choose a topic between ____, ______, _______");
         System.out.println("Please choose a difficulty between Easy, Medium, Hard");
+        String difficulty= scan.next();
+        System.out.println(difficulty);
+//        if (String difficulty = "Easy"){
+//            System.out.println("Welcome");
+//        }
 
 
         ArrayList<String> questions = getFileData("Questions");
@@ -39,21 +45,18 @@ public class Main {
 
                 String a =  answers.get(1);
                 int length = a.length();
-                int indexNumLetters = a.length() - 1;
+                int indexNumLetters = a.length();
                 for (int i = 0; i < indexNumLetters; i++) {
                     String letter = String.valueOf(a.charAt(i));
                     String space = " ";
-                     for (i = 0; i < length; i++) {
-                         if (letter.equals(space)){
+                    if (letter.equals(space)){
                              System.out.print(" ");
-                     }
-                             else {
-                             System.out.print("_");
-                         }
                     }
-            }
-                
+                    else {
+                             System.out.print("_");
+                    }
 
+            }
 
     }
 
