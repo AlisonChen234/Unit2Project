@@ -1,8 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -12,7 +11,7 @@ public class Main {
         System.out.println("Welcome to my Trivia Game.");
         //System.out.println("Please choose a topic between ____, ______, _______");
         System.out.println("Please choose a difficulty between Easy, Medium, Hard");
-        String difficulty= scan.next();
+        String difficulty= scan.nextLine();
         System.out.println(difficulty);
        if (difficulty.equalsIgnoreCase("Easy")) {
             System.out.println("Welcome");
@@ -42,13 +41,16 @@ public class Main {
                 System.out.print("_");
                     }
             }
-        String userAnswer= scan.next();
-
+        System.out.println();
+        String userAnswer= scan.nextLine();
+//        System.out.println(userAnswer);
         while (!userAnswer.equalsIgnoreCase(a)){
-            System.out.println("Try again");
+            List<String> messages = Arrays.asList("Bro, come on", "How do you not know this", "bruh", "0 IQ");
+
         }
         if (userAnswer.equalsIgnoreCase(a)){
             System.out.println("you got the correct answer");
+            List<String> messages = Arrays.asList("1000 IQ", "Hmmm, very smart", "YAY", "yesss sirrr");
         }
 
 
