@@ -1,22 +1,27 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        double randomNum=0;
 
 
         System.out.println("Welcome to my Trivia Game.");
         //System.out.println("Please choose a topic between ____, ______, _______");
         System.out.println("Please choose a difficulty between Easy, Medium, Hard");
         String difficulty = scan.nextLine();
-        System.out.println(difficulty);
+        //System.out.println(difficulty);
         if (difficulty.equalsIgnoreCase("Easy")) {
+            randomNum = (int) (Math.random() * 17) + 1;
             System.out.println("Welcome");
         } else if (difficulty.equalsIgnoreCase("Medium")) {
+            randomNum = (int) (Math.random() * 21) + 21;
             System.out.println(" this is mediunm");
         } else if (difficulty.equalsIgnoreCase("Hard")) {
+            randomNum = (int) (Math.random() * 10) + 45;
             System.out.println("this is hard");
         }
 
@@ -25,8 +30,8 @@ public class Main {
         ArrayList<String> answers = ExtractInfo.getFileData("Answers");
 
 
-        System.out.println(questions.get(1));
-        String a = answers.get(1);
+        System.out.println(questions.get((int) randomNum));
+        String a = answers.get((int) randomNum);
         int indexNumLetters = a.length();
         for (int i = 0; i < indexNumLetters; i++) {
             String letter = String.valueOf(a.charAt(i));
