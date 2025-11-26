@@ -8,7 +8,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         double randomNum = 0;
         boolean runGame = true;
-        while (runGame == true) {
+        while (runGame) {
 
 
             System.out.println("Welcome to my Trivia Game.");
@@ -18,13 +18,13 @@ public class Main {
             //System.out.println(difficulty);
             if (difficulty.equalsIgnoreCase("Easy")) {
                 randomNum = (int) (Math.random() * 17) + 1;
-                System.out.println("Welcome");
+                //System.out.println("Welcome");
             } else if (difficulty.equalsIgnoreCase("Medium")) {
-                randomNum = (int) (Math.random() * 21) + 21;
-                System.out.println(" this is mediunm");
+                randomNum = (int) (Math.random() * 20) + 19;
+                //System.out.println(" this is medium");
             } else if (difficulty.equalsIgnoreCase("Hard")) {
-                randomNum = (int) (Math.random() * 10) + 45;
-                System.out.println("this is hard");
+                randomNum = (int) (Math.random() * 10) + 40;
+                //System.out.println("this is hard");
             }
 
 
@@ -34,6 +34,8 @@ public class Main {
 
             System.out.println(questions.get((int) randomNum));
             String a = answers.get((int) randomNum);
+//            System.out.println(questions.get(40));
+//            String a = answers.get((28));
             int indexNumLetters = a.length();
             for (int i = 0; i < indexNumLetters; i++) {
                 String letter = String.valueOf(a.charAt(i));
@@ -48,7 +50,7 @@ public class Main {
             String userAnswer = scan.nextLine();
 //        System.out.println(userAnswer);
             while (!userAnswer.equalsIgnoreCase(a)) {
-                List<String> messages = Arrays.asList("Bro, come on", "How do you not know this", "bruh", "0 IQ");
+                List<String> messages = Arrays.asList("This isn't correct", "Wrong", "Not this one");
                 System.out.println(messages.get((int) (Math.random() * messages.size())));
                 System.out.println("Try again");
                 userAnswer = scan.nextLine();
@@ -56,7 +58,7 @@ public class Main {
             }
             if (userAnswer.equalsIgnoreCase(a)) {
                 System.out.println("you got the correct answer");
-                List<String> messages = Arrays.asList("1000 IQ", "Hmmm, very smart", "YAY", "yesss sirrr");
+                List<String> messages = Arrays.asList("1000 IQ", "Hmmm, very smart", "YAY");
 
                 System.out.println("Please type yes if you want to try again or no to indicate that you're done");
                 String tryAgain = scan.nextLine();
